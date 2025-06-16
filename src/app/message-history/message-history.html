@@ -1,0 +1,11 @@
+@if (messages) {
+  <h1>Message History({{messages.length}})</h1>
+  <div style="overflow:scroll;height:200px;">
+  @for (message of messages; track message.timestamp) {
+    <div>
+      <div>{{message.phone}}<span style="float:right;">{{message.timestamp | date:'EEEE, d-MMMM-yy, H:mm:ss' }} UTC</span></div>
+      <div style="border:0.05rem solid;">{{message.message}}</div>{{message.message.length}}/250
+    </div>
+  }
+  </div>
+}
